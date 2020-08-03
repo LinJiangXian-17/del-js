@@ -1,4 +1,4 @@
-//何某独家秘方，自动删除微博收藏（闲着无聊随便做）
+//自动删除微博收藏（在浏览器打开控制台运行）
 var href = location.href;
 
 function main() {
