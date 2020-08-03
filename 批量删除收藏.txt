@@ -1,0 +1,31 @@
+//何某独家秘方，自动删除微博收藏（闲着无聊随便做）
+var href = location.href;
+
+function main() {
+    document.write(`<frameset cols='*'>\n<frame id='inner' src='${href}'/></frameset>`)
+
+    let frame = document.getElementById('inner');
+    frame.onload = function () {
+        let {
+            contentWindow: window,
+            contentDocument: document
+        } = frame;
+        window.setInterval(() => {
+            try {
+	//找到收藏按钮并点击
+                document.querySelector('a[action-type="fl_favorite"]').click();
+               
+	//找到弹出的确认框并点击确认
+                document.querySelector('a[node-type="ok"]').click();
+            } catch (err) {
+               
+            }
+
+        }, 2000)
+    }
+    document.close();
+}
+
+main();
+
+setInterval(main, 1000 * 40);
