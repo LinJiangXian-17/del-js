@@ -12,10 +12,8 @@ function main() {
         } = frame;
         window.setInterval(() => {
             try {
-	//找到收藏按钮并点击
                 document.querySelector('a[action-type="fl_favorite"]').click();
-               
-	//找到弹出的确认框并点击确认
+
                 document.querySelector('a[node-type="ok"]').click();
             } catch (err) {
                
